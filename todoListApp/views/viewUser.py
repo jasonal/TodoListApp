@@ -18,7 +18,7 @@ def loginUser(request):
         Vista utilizada para verificar el acceso a la aplicación
     """
     if not request.user.is_anonymous():
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/principal')
     form = AuthenticationForm(request.POST or None)
     if form.is_valid:
         if 'username' and 'password' in request.POST:
